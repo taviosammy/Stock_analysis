@@ -1,0 +1,29 @@
+Sub Forloops()
+
+    Worksheets("DQ ANALYSIS").Activate
+
+        Range("a1").Value = "DAQO (TICKER: DQ)"
+    
+        Cells(3, 1).Value = "Year"
+        Cells(3, 2).Value = "Total Daily Volume"
+        Cells(3, 3).Value = "Return"
+    
+    totalvolume = 0
+    endrow = 3013
+    startrow = 2
+
+    Worksheets("2018").Activate
+
+    For i = startrow To endrow
+        'increase totalvolume if ticker equal "DQ"
+        
+        If Cells(i, 1).Value = "DQ" Then
+            totalvolume = totalvolume + Cells(i, 8).Value
+        
+        End If
+    
+    Next i
+
+    MsgBox (totalvolume)
+
+End Sub
