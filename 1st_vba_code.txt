@@ -1,0 +1,21 @@
+Sub macrocheck()
+
+Dim textmessage As String
+
+    textmessage = "Hello World"
+    
+    MsgBox (textmessage)
+End Sub
+
+Sub DQANALYSIS()
+
+    Worksheets("DQ ANALYSIS").Activate
+
+    Range("a1").Value = "DAQO (TICKER: DQ)"
+    
+    'Create a Header Row
+    Cells(3, 1).Value = "Year"
+    Cells(3, 2).Value = "Total Daily Volume"
+    Cells(3, 3) = "Return"
+    
+End Sub
